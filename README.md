@@ -11,7 +11,7 @@
 1.  **Clone repository và submodules**:
     Mở terminal và chạy các lệnh sau để clone dự án và cập nhật các submodules:
     ```bash
-    git clone [https://github.com/letrung2004/aucontech-intern-test.git](https://github.com/letrung2004/aucontech-intern-test.git)
+    git clone https://github.com/letrung2004/aucontech-intern-test.git
     cd aucontech-intern-test
     git submodule update --init --recursive
     git submodule update --recursive --remote
@@ -36,10 +36,10 @@
             username: root
             password: YOUR_PASS_WORD
         ```
-    * **Lưu ý**: Dự án sử dụng file `application.yaml` thay vì `application.properties`. Các cấu hình khác như `jpa` và `jwt` đã được định nghĩa sẵn trong file này.
+    * **Lưu ý**: Dự án sử dụng file `application.yaml`. Các cấu hình `jwt` đã được định nghĩa sẵn trong file này.
 
 2.  **Khởi động Backend**:
-    Mở terminal trong thư mục `backend` và chạy lệnh sau:
+    Mở terminal `cd` vào trong thư mục `backend` và chạy lệnh sau:
     ```bash
     ./mvnw spring-boot:run
     ```
@@ -63,33 +63,23 @@
 
 ## Chức năng
 
-* **Người dùng**: Đăng ký và đăng nhập bằng **JWT**.
-* **Bài viết**: Người dùng có thể tạo, xem, chỉnh sửa và xóa bài viết của mình. Chỉ tác giả mới có quyền chỉnh sửa/xóa bài viết.
-
 ---
 
 ## Hướng dẫn Kiểm tra
-
-### Đăng ký & Đăng nhập
 
 * Truy cập `/register` để tạo tài khoản.
 * Truy cập `/login` để đăng nhập.
 * **JWT** được lưu trong **Local Storage** sau khi đăng nhập thành công.
 
-### Quản lý Bài viết
 
-* **Tạo bài viết**: Điền tiêu đề và nội dung, sau đó nhấn "submit". Bài viết sẽ hiển thị trong danh sách.
-* **Chỉnh sửa bài viết**: Nhấn "Edit", cập nhật nội dung và gửi lại.
-* **Xóa bài viết**: Nhấn "Delete" và xác nhận để xóa khỏi danh sách.
-
-### Kiểm tra Dữ liệu
+## Kiểm tra Dữ liệu
 
 * Kiểm tra bảng `users` và `posts` trong database.
 * Token JWT được gửi kèm trong header `Authorization: Bearer <token>` khi gọi các API cần xác thực.
 
 ---
 
-## Lưu ý Kỹ thuật
+## Lưu ý
 
 * Mật khẩu được hash bằng **BCrypt**.
 * **CORS** đã được cấu hình để cho phép frontend gọi API.
