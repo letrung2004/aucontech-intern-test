@@ -1,0 +1,6 @@
+[submodule "backend"]
+	path = backend
+	url = https://github.com/letrung2004/aucontech-intern-test-blog-management-system.git
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/letrung2004/blog-app.git
